@@ -110,8 +110,27 @@ export interface DataResponse<T = any> {
 // Health data types
 export interface HealthData {
   hospitals: Hospital[];
-  diseases: DiseaseData[];
-  vaccination: VaccinationData[];
+  diseases: Diseasesurveillance[];
+  vaccination: VaccinationCoverage[];
+}
+
+export interface Diseasesurveillance {
+  id: string;
+  name: string;
+  cases: number;
+  deaths: number;
+  recovered: number;
+  region: string;
+  reportDate: string;
+}
+
+export interface VaccinationCoverage {
+  id: string;
+  vaccine: string;
+  region: string;
+  coverage: number;
+  target: number;
+  lastUpdated: string;
 }
 
 export interface Hospital {
@@ -135,8 +154,29 @@ export interface Hospital {
 // Environment data types
 export interface EnvironmentData {
   airQuality: AirQualityData[];
-  forestFires: ForestFireData[];
-  climateIndicators: ClimateData[];
+  forestFires: ForestFireSpot[];
+  climateIndicators: ClimateIndicator[];
+}
+
+export interface ForestFireSpot {
+  id: string;
+  coordinates: [number, number];
+  confidence: number;
+  brightness: number;
+  province: string;
+  district: string;
+  detectedAt: string;
+  satellite: string;
+}
+
+export interface ClimateIndicator {
+  id: string;
+  indicator: string;
+  value: number;
+  unit: string;
+  region: string;
+  date: string;
+  trend: 'increasing' | 'decreasing' | 'stable';
 }
 
 export interface AirQualityData {
@@ -161,8 +201,30 @@ export interface AirQualityData {
 // Emergency data types
 export interface EmergencyData {
   disasters: DisasterData[];
-  weatherWarnings: WeatherWarning[];
-  earthquakes: EarthquakeData[];
+  weatherWarnings: WeatherAlert[];
+  earthquakes: EarthquakeEvent[];
+}
+
+export interface WeatherAlert {
+  id: string;
+  type: 'heavy_rain' | 'wind' | 'thunderstorm' | 'flood' | 'drought';
+  severity: 'advisory' | 'watch' | 'warning' | 'critical';
+  region: string;
+  description: string;
+  validFrom: string;
+  validUntil: string;
+  issuedAt: string;
+}
+
+export interface EarthquakeEvent {
+  id: string;
+  magnitude: number;
+  depth: number;
+  coordinates: [number, number];
+  location: string;
+  timestamp: string;
+  intensity: string;
+  tsunami: boolean;
 }
 
 export interface DisasterData {
@@ -193,6 +255,36 @@ export interface TransparencyData {
   courtDecisions: CourtDecision[];
 }
 
+export interface AssetDeclaration {
+  id: string;
+  officialName: string;
+  position: string;
+  agency: string;
+  assets: {
+    immovable: number;
+    movable: number;
+    cash: number;
+    securities: number;
+    other: number;
+  };
+  liabilities: number;
+  netWorth: number;
+  reportYear: number;
+  submittedAt: string;
+}
+
+export interface CourtDecision {
+  id: string;
+  caseNumber: string;
+  court: string;
+  caseType: string;
+  parties: string[];
+  decision: string;
+  judge: string;
+  date: string;
+  status: 'final' | 'appeal' | 'cassation';
+}
+
 export interface ProcurementData {
   id: string;
   title: string;
@@ -218,6 +310,38 @@ export interface StatisticsData {
   demographics: DemographicsData;
   economy: EconomicIndicators;
   social: SocialIndicators;
+}
+
+export interface DemographicsData {
+  population: number;
+  growthRate: number;
+  density: number;
+  ageGroups: AgeGroup[];
+  region: string;
+  year: number;
+}
+
+export interface AgeGroup {
+  range: string;
+  count: number;
+  percentage: number;
+}
+
+export interface EconomicIndicators {
+  gdp: number;
+  inflation: number;
+  unemployment: number;
+  poverty: number;
+  region: string;
+  year: number;
+}
+
+export interface SocialIndicators {
+  literacy: number;
+  healthIndex: number;
+  educationIndex: number;
+  region: string;
+  year: number;
 }
 
 // API Status and monitoring
