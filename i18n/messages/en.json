@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "title": "Data ForPublic.id | Indonesia's Open Data Infrastructure",
+    "description": "Centralized platform and API gateway for Indonesian government datasets. Unified API access for health, environment, transparency, statistics, and more."
+  },
+  "hero": {
+    "status": "API Gateway Active",
+    "title": {
+      "line1": "Indonesia's Open Data",
+      "line2": "Infrastructure"
+    },
+    "subtitle": "Centralized platform to access Indonesian government data through standardized APIs. One access point for all public transparency datasets.",
+    "features": {
+      "unified": "Unified API",
+      "accessible": "Accessible",
+      "realtime": "Real-time",
+      "reliable": "Reliable"
+    },
+    "cta": {
+      "explore": "Explore APIs",
+      "docs": "Documentation"
+    },
+    "stats": {
+      "datasets": "Available Datasets",
+      "ministries": "Ministries",
+      "uptime": "Uptime"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "apis": "APIs",
+    "docs": "Documentation", 
+    "status": "Status",
+    "about": "About"
+  },
+  "dataSources": {
+    "title": "Available Data Sources",
+    "subtitle": "Access data from various Indonesian government ministries and agencies",
+    "categories": {
+      "health": "Health",
+      "environment": "Environment",
+      "transparency": "Transparency",
+      "statistics": "Statistics", 
+      "emergency": "Emergency",
+      "governance": "Governance",
+      "social": "Social",
+      "economic": "Economic"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline", 
+      "maintenance": "Maintenance"
+    },
+    "updateFrequency": {
+      "realtime": "Real-time",
+      "hourly": "Hourly",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly", 
+      "quarterly": "Quarterly",
+      "annually": "Annually"
+    }
+  },
+  "api": {
+    "title": "API Overview",
+    "subtitle": "RESTful API endpoints with consistent response format",
+    "endpoints": {
+      "health": "Health Data",
+      "environment": "Environment Data",
+      "transparency": "Transparency Data", 
+      "statistics": "Statistics Data",
+      "emergency": "Emergency Data"
+    },
+    "features": {
+      "standardized": "Standardized Format",
+      "cached": "Optimal Caching",
+      "monitored": "24/7 Monitoring",
+      "documented": "Complete Documentation"
+    }
+  },
+  "footer": {
+    "description": "Indonesia's open data infrastructure for public transparency and accountability",
+    "links": {
+      "ecosystem": "Ecosystem",
+      "resources": "Resources",
+      "support": "Support"
+    },
+    "ecosystem": {
+      "main": "ForPublic.id",
+      "salary": "Salary Data",
+      "budget": "Budget Data",
+      "planning": "Planning",
+      "holiday": "Calendar"
+    },
+    "resources": {
+      "docs": "Documentation",
+      "github": "GitHub", 
+      "status": "API Status",
+      "changelog": "Changelog"
+    },
+    "support": {
+      "contact": "Contact",
+      "help": "Help",
+      "feedback": "Feedback",
+      "report": "Report Bug"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "title": "Data ForPublic.id | Infrastruktur Data Terbuka Indonesia",
+    "description": "Platform terpusat dan API gateway untuk dataset pemerintah Indonesia. Akses API terpadu untuk kesehatan, lingkungan, transparansi, statistik, dan lainnya."
+  },
+  "hero": {
+    "status": "API Gateway Aktif",
+    "title": {
+      "line1": "Infrastruktur Data Terbuka", 
+      "line2": "Indonesia"
+    },
+    "subtitle": "Platform terpusat untuk mengakses data pemerintah Indonesia melalui API yang terstandarisasi. Satu akses untuk semua dataset transparansi publik.",
+    "features": {
+      "unified": "API Terpadu",
+      "accessible": "Dapat Diakses",
+      "realtime": "Real-time",
+      "reliable": "Terpercaya"
+    },
+    "cta": {
+      "explore": "Jelajahi API",
+      "docs": "Dokumentasi"
+    },
+    "stats": {
+      "datasets": "Dataset Tersedia",
+      "ministries": "Kementerian",
+      "uptime": "Waktu Aktif"
+    }
+  },
+  "navigation": {
+    "home": "Beranda",
+    "apis": "API",
+    "docs": "Dokumentasi",
+    "status": "Status",
+    "about": "Tentang"
+  },
+  "dataSources": {
+    "title": "Sumber Data Tersedia",
+    "subtitle": "Akses data dari berbagai kementerian dan lembaga pemerintah Indonesia",
+    "categories": {
+      "health": "Kesehatan",
+      "environment": "Lingkungan",
+      "transparency": "Transparansi", 
+      "statistics": "Statistik",
+      "emergency": "Darurat",
+      "governance": "Pemerintahan",
+      "social": "Sosial",
+      "economic": "Ekonomi"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "maintenance": "Pemeliharaan"
+    },
+    "updateFrequency": {
+      "realtime": "Real-time",
+      "hourly": "Per Jam",
+      "daily": "Harian",
+      "weekly": "Mingguan", 
+      "monthly": "Bulanan",
+      "quarterly": "Triwulan",
+      "annually": "Tahunan"
+    }
+  },
+  "api": {
+    "title": "API Overview",
+    "subtitle": "RESTful API endpoints dengan format response yang konsisten",
+    "endpoints": {
+      "health": "Data Kesehatan",
+      "environment": "Data Lingkungan",
+      "transparency": "Data Transparansi",
+      "statistics": "Data Statistik",
+      "emergency": "Data Darurat"
+    },
+    "features": {
+      "standardized": "Format Terstandar",
+      "cached": "Cache Optimal",
+      "monitored": "Monitoring 24/7",
+      "documented": "Dokumentasi Lengkap"
+    }
+  },
+  "footer": {
+    "description": "Infrastruktur data terbuka Indonesia untuk transparansi dan akuntabilitas publik",
+    "links": {
+      "ecosystem": "Ekosistem",
+      "resources": "Sumber Daya",
+      "support": "Dukungan"
+    },
+    "ecosystem": {
+      "main": "ForPublic.id",
+      "salary": "Data Gaji",
+      "budget": "Data Anggaran", 
+      "planning": "Perencanaan",
+      "holiday": "Kalender"
+    },
+    "resources": {
+      "docs": "Dokumentasi",
+      "github": "GitHub",
+      "status": "Status API",
+      "changelog": "Perubahan"
+    },
+    "support": {
+      "contact": "Kontak",
+      "help": "Bantuan",
+      "feedback": "Feedback",
+      "report": "Lapor Bug"
+    }
+  }
+}
