@@ -11,6 +11,8 @@ import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Badge } from "@/components/ui/Badge";
 
 const navigation = [
+  { key: "datasets", href: "/datasets" },
+  { key: "dashboard", href: "/dashboard" },
   { key: "docs", href: "/docs" },
   { key: "status", href: "/status" },
 ];
@@ -83,7 +85,10 @@ export function Header() {
 
           {/* API Status Badge & Language Switcher */}
           <div className="hidden md:flex items-center space-x-4">
-            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+            <Badge
+              variant="outline"
+              className="bg-green-50 text-green-700 border-green-200"
+            >
               API Active
             </Badge>
             <LanguageSwitcher locale={locale} />
@@ -128,7 +133,10 @@ export function Header() {
             </nav>
 
             <div className="flex items-center justify-between mt-6 pt-4 border-t">
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+              <Badge
+                variant="outline"
+                className="bg-green-50 text-green-700 border-green-200"
+              >
                 API Active
               </Badge>
               <LanguageSwitcher locale={locale} />

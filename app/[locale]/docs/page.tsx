@@ -40,7 +40,7 @@ export default async function DocsPage({ params }: DocsPageProps) {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             {locale === "id" ? "Endpoint Tersedia" : "Available Endpoints"}
           </h2>
-          
+
           <div className="space-y-6">
             {/* Health APIs */}
             <div className="border rounded-lg p-6">
@@ -49,8 +49,12 @@ export default async function DocsPage({ params }: DocsPageProps) {
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">GET</span>
-                  <code className="font-mono text-sm">/api/v1/health/hospitals</code>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                    GET
+                  </span>
+                  <code className="font-mono text-sm">
+                    /api/v1/health/hospitals
+                  </code>
                   <span className="text-gray-600">
                     {locale === "id" ? "Data rumah sakit" : "Hospital data"}
                   </span>
@@ -65,8 +69,12 @@ export default async function DocsPage({ params }: DocsPageProps) {
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">GET</span>
-                  <code className="font-mono text-sm">/api/v1/environment/air-quality</code>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                    GET
+                  </span>
+                  <code className="font-mono text-sm">
+                    /api/v1/environment/air-quality
+                  </code>
                   <span className="text-gray-600">
                     {locale === "id" ? "Kualitas udara" : "Air quality"}
                   </span>
@@ -83,7 +91,7 @@ export default async function DocsPage({ params }: DocsPageProps) {
           </h2>
           <div className="bg-gray-50 rounded-lg p-6">
             <pre className="bg-gray-900 text-gray-100 rounded p-4 overflow-x-auto text-sm">
-{`{
+              {`{
   "data": [...],
   "metadata": {
     "source": "kemkes",

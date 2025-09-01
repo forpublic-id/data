@@ -28,7 +28,8 @@
   },
   "navigation": {
     "home": "Home",
-    "apis": "APIs",
+    "datasets": "Datasets",
+    "dashboard": "Dashboard",
     "docs": "Documentation",
     "status": "Status",
     "about": "About"

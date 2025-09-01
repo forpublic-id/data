@@ -28,7 +28,9 @@ export default async function StatusPage({ params }: StatusPageProps) {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-semibold text-green-900">
-                {locale === "id" ? "Semua Sistem Operasional" : "All Systems Operational"}
+                {locale === "id"
+                  ? "Semua Sistem Operasional"
+                  : "All Systems Operational"}
               </h2>
               <p className="text-green-700">
                 {locale === "id"
@@ -47,7 +49,7 @@ export default async function StatusPage({ params }: StatusPageProps) {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             {locale === "id" ? "Status API Endpoints" : "API Endpoints Status"}
           </h2>
-          
+
           <div className="space-y-4">
             {/* Health APIs */}
             <div className="border rounded-lg p-4">
@@ -92,10 +94,15 @@ export default async function StatusPage({ params }: StatusPageProps) {
                   <h3 className="font-medium text-gray-900">
                     {locale === "id" ? "API Transparansi" : "Transparency APIs"}
                   </h3>
-                  <p className="text-sm text-gray-600">/api/v1/transparency/*</p>
+                  <p className="text-sm text-gray-600">
+                    /api/v1/transparency/*
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
+                  <Badge
+                    variant="outline"
+                    className="bg-yellow-50 text-yellow-700 border-yellow-200"
+                  >
                     {locale === "id" ? "Segera Hadir" : "Coming Soon"}
                   </Badge>
                 </div>
@@ -111,7 +118,10 @@ export default async function StatusPage({ params }: StatusPageProps) {
                   <p className="text-sm text-gray-600">/api/v1/statistics/*</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
+                  <Badge
+                    variant="outline"
+                    className="bg-yellow-50 text-yellow-700 border-yellow-200"
+                  >
                     {locale === "id" ? "Segera Hadir" : "Coming Soon"}
                   </Badge>
                 </div>
@@ -125,13 +135,15 @@ export default async function StatusPage({ params }: StatusPageProps) {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             {locale === "id" ? "Status Sumber Data" : "Data Sources Status"}
           </h2>
-          
+
           <div className="space-y-4">
             <div className="border rounded-lg p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-medium text-gray-900">
-                    {locale === "id" ? "Kementerian Kesehatan" : "Ministry of Health"}
+                    {locale === "id"
+                      ? "Kementerian Kesehatan"
+                      : "Ministry of Health"}
                   </h3>
                   <p className="text-sm text-gray-600">kemkes.go.id</p>
                 </div>
@@ -145,7 +157,9 @@ export default async function StatusPage({ params }: StatusPageProps) {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-medium text-gray-900">
-                    {locale === "id" ? "Kementerian Lingkungan Hidup" : "Ministry of Environment"}
+                    {locale === "id"
+                      ? "Kementerian Lingkungan Hidup"
+                      : "Ministry of Environment"}
                   </h3>
                   <p className="text-sm text-gray-600">menlhk.go.id</p>
                 </div>
@@ -159,7 +173,8 @@ export default async function StatusPage({ params }: StatusPageProps) {
 
         {/* Last Updated */}
         <div className="text-center text-sm text-gray-500">
-          {locale === "id" ? "Terakhir diperbarui" : "Last updated"}: {new Date().toLocaleString(locale === "id" ? "id-ID" : "en-US")}
+          {locale === "id" ? "Terakhir diperbarui" : "Last updated"}:{" "}
+          {new Date().toLocaleString(locale === "id" ? "id-ID" : "en-US")}
         </div>
       </div>
     </div>

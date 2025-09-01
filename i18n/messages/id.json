@@ -28,7 +28,8 @@
   },
   "navigation": {
     "home": "Beranda",
-    "apis": "API",
+    "datasets": "Dataset",
+    "dashboard": "Dashboard",
     "docs": "Dokumentasi",
     "status": "Status",
     "about": "Tentang"
