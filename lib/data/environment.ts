@@ -1,4 +1,4 @@
-import type { AirQualityData } from '@/lib/types/data';
+import type { AirQualityData } from "@/lib/types/data";
 
 interface AirQualityQueryParams {
   province?: string | null;
@@ -15,9 +15,9 @@ interface AirQualityResponse {
 // Mock air quality data for development
 const MOCK_AIR_QUALITY: AirQualityData[] = [
   {
-    stationId: 'aq-001',
+    stationId: "aq-001",
     location: {
-      name: 'Jakarta Pusat',
+      name: "Jakarta Pusat",
       coordinates: [-6.2088, 106.8456],
     },
     measurements: {
@@ -29,13 +29,13 @@ const MOCK_AIR_QUALITY: AirQualityData[] = [
       o3: 78.9,
     },
     aqi: 95,
-    category: 'sedang',
+    category: "sedang",
     timestamp: new Date().toISOString(),
   },
   {
-    stationId: 'aq-002',
+    stationId: "aq-002",
     location: {
-      name: 'Bandung',
+      name: "Bandung",
       coordinates: [-6.9175, 107.6191],
     },
     measurements: {
@@ -47,32 +47,36 @@ const MOCK_AIR_QUALITY: AirQualityData[] = [
       o3: 65.3,
     },
     aqi: 78,
-    category: 'baik',
+    category: "baik",
     timestamp: new Date().toISOString(),
   },
 ];
 
-export async function getAirQualityData(params: AirQualityQueryParams): Promise<AirQualityResponse> {
+export async function getAirQualityData(
+  params: AirQualityQueryParams,
+): Promise<AirQualityResponse> {
   // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 150));
+  await new Promise((resolve) => setTimeout(resolve, 150));
 
   let filteredData = MOCK_AIR_QUALITY;
 
   // Apply filters
   if (params.province) {
-    filteredData = filteredData.filter(aq => 
-      aq.location.name.toLowerCase().includes(params.province!.toLowerCase())
+    filteredData = filteredData.filter((aq) =>
+      aq.location.name.toLowerCase().includes(params.province!.toLowerCase()),
     );
   }
 
   if (params.city) {
-    filteredData = filteredData.filter(aq => 
-      aq.location.name.toLowerCase().includes(params.city!.toLowerCase())
+    filteredData = filteredData.filter((aq) =>
+      aq.location.name.toLowerCase().includes(params.city!.toLowerCase()),
     );
   }
 
   if (params.stationId) {
-    filteredData = filteredData.filter(aq => aq.stationId === params.stationId);
+    filteredData = filteredData.filter(
+      (aq) => aq.stationId === params.stationId,
+    );
   }
 
   return {

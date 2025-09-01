@@ -10,12 +10,14 @@ export function APIOverview() {
             RESTful API endpoints with consistent response format
           </p>
         </div>
-        
+
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Placeholder for API endpoint cards */}
           <div className="data-card">
             <h3 className="font-semibold">Health APIs</h3>
-            <p className="text-sm text-muted-foreground">Hospital capacity, disease surveillance</p>
+            <p className="text-sm text-muted-foreground">
+              Hospital capacity, disease surveillance
+            </p>
             <code className="api-endpoint mt-2">/api/v1/health/hospitals</code>
           </div>
         </div>

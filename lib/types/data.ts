@@ -12,39 +12,46 @@ export interface DataSource {
   };
   url: string;
   apiUrl?: string;
-  type: 'government' | 'ministry' | 'regional' | 'statistical' | 'emergency';
+  type: "government" | "ministry" | "regional" | "statistical" | "emergency";
   category: DataCategory;
-  reliability: 'high' | 'medium' | 'low';
-  updateFrequency: 'realtime' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'quarterly' | 'annually';
+  reliability: "high" | "medium" | "low";
+  updateFrequency:
+    | "realtime"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "quarterly"
+    | "annually";
   lastUpdated: string;
-  status: 'online' | 'offline' | 'maintenance';
+  status: "online" | "offline" | "maintenance";
   rateLimits?: {
     requests: number;
     period: string; // '1h', '1d', etc.
   };
   authentication?: {
     required: boolean;
-    type?: 'api_key' | 'oauth' | 'basic';
+    type?: "api_key" | "oauth" | "basic";
   };
 }
 
-export type DataCategory = 
-  | 'health'
-  | 'environment' 
-  | 'transparency'
-  | 'statistics'
-  | 'emergency'
-  | 'governance'
-  | 'social'
-  | 'economic'
-  | 'education'
-  | 'transportation'
-  | 'energy'
-  | 'agriculture';
+export type DataCategory =
+  | "health"
+  | "environment"
+  | "transparency"
+  | "statistics"
+  | "emergency"
+  | "governance"
+  | "social"
+  | "economic"
+  | "education"
+  | "transportation"
+  | "energy"
+  | "agriculture";
 
 export interface APIEndpoint {
   path: string;
-  method: 'GET' | 'POST';
+  method: "GET" | "POST";
   description: {
     id: string;
     en: string;
@@ -63,7 +70,7 @@ export interface APIEndpoint {
 
 export interface APIParameter {
   name: string;
-  type: 'string' | 'number' | 'boolean' | 'array';
+  type: "string" | "number" | "boolean" | "array";
   required: boolean;
   description: {
     id: string;
@@ -85,10 +92,10 @@ export interface DataResponse<T = any> {
   data: T;
   metadata: {
     source: string;
-    sourceType: DataSource['type'];
+    sourceType: DataSource["type"];
     lastUpdated: string;
     nextUpdate?: string;
-    reliability: DataSource['reliability'];
+    reliability: DataSource["reliability"];
     cached: boolean;
     cacheExpiry?: string;
   };
@@ -136,7 +143,7 @@ export interface VaccinationCoverage {
 export interface Hospital {
   id: string;
   name: string;
-  type: 'rs_pemerintah' | 'rs_swasta' | 'puskesmas' | 'klinik';
+  type: "rs_pemerintah" | "rs_swasta" | "puskesmas" | "klinik";
   province: string;
   city: string;
   capacity: {
@@ -176,7 +183,7 @@ export interface ClimateIndicator {
   unit: string;
   region: string;
   date: string;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: "increasing" | "decreasing" | "stable";
 }
 
 export interface AirQualityData {
@@ -194,7 +201,12 @@ export interface AirQualityData {
     o3: number;
   };
   aqi: number;
-  category: 'baik' | 'sedang' | 'tidak_sehat' | 'sangat_tidak_sehat' | 'berbahaya';
+  category:
+    | "baik"
+    | "sedang"
+    | "tidak_sehat"
+    | "sangat_tidak_sehat"
+    | "berbahaya";
   timestamp: string;
 }
 
@@ -207,8 +219,8 @@ export interface EmergencyData {
 
 export interface WeatherAlert {
   id: string;
-  type: 'heavy_rain' | 'wind' | 'thunderstorm' | 'flood' | 'drought';
-  severity: 'advisory' | 'watch' | 'warning' | 'critical';
+  type: "heavy_rain" | "wind" | "thunderstorm" | "flood" | "drought";
+  severity: "advisory" | "watch" | "warning" | "critical";
   region: string;
   description: string;
   validFrom: string;
@@ -229,13 +241,20 @@ export interface EarthquakeEvent {
 
 export interface DisasterData {
   id: string;
-  type: 'flood' | 'earthquake' | 'volcano' | 'landslide' | 'tsunami' | 'drought' | 'wildfire';
+  type:
+    | "flood"
+    | "earthquake"
+    | "volcano"
+    | "landslide"
+    | "tsunami"
+    | "drought"
+    | "wildfire";
   location: {
     province: string;
     regency: string;
     coordinates: [number, number];
   };
-  severity: 'low' | 'medium' | 'high' | 'critical';
+  severity: "low" | "medium" | "high" | "critical";
   description: string;
   affectedPopulation: number;
   damages: {
@@ -243,7 +262,7 @@ export interface DisasterData {
     infrastructure: string[];
     economicLoss?: number;
   };
-  status: 'active' | 'monitoring' | 'resolved';
+  status: "active" | "monitoring" | "resolved";
   reportedAt: string;
   lastUpdated: string;
 }
@@ -282,7 +301,7 @@ export interface CourtDecision {
   decision: string;
   judge: string;
   date: string;
-  status: 'final' | 'appeal' | 'cassation';
+  status: "final" | "appeal" | "cassation";
 }
 
 export interface ProcurementData {
@@ -290,8 +309,14 @@ export interface ProcurementData {
   title: string;
   agency: string;
   value: number;
-  method: 'tender_terbuka' | 'tender_terbatas' | 'penunjukan_langsung';
-  status: 'planning' | 'tender' | 'evaluation' | 'award' | 'contract' | 'completed';
+  method: "tender_terbuka" | "tender_terbatas" | "penunjukan_langsung";
+  status:
+    | "planning"
+    | "tender"
+    | "evaluation"
+    | "award"
+    | "contract"
+    | "completed";
   timeline: {
     announcement: string;
     bidding: string;
@@ -347,7 +372,7 @@ export interface SocialIndicators {
 // API Status and monitoring
 export interface APIStatus {
   endpoint: string;
-  status: 'operational' | 'degraded' | 'partial' | 'major_outage';
+  status: "operational" | "degraded" | "partial" | "major_outage";
   responseTime: number; // ms
   uptime: number; // percentage
   lastCheck: string;

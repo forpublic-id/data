@@ -7,7 +7,7 @@ export function Statistics() {
             Platform Statistics
           </h2>
         </div>
-        
+
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div className="bg-white/60 backdrop-blur rounded-lg p-6 border border-red-100">
             <div className="text-3xl font-bold text-red-600">50+</div>

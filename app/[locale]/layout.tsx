@@ -1,8 +1,8 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -15,15 +15,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'metadata' });
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t("title"),
+    description: t("description"),
     alternates: {
       languages: {
-        id: '/id',
-        en: '/en',
+        id: "/id",
+        en: "/en",
       },
     },
   };
@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Validate locale
-  if (locale !== 'id' && locale !== 'en') {
+  if (locale !== "id" && locale !== "en") {
     notFound();
   }
 
@@ -46,9 +46,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </div>
     </NextIntlClientProvider>

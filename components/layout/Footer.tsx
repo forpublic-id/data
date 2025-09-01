@@ -1,88 +1,86 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
-  const t = useTranslations('footer');
+  const locale = useLocale();
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center space-x-2">
-              <span className="font-bold text-xl text-red-600">Data ForPublic.id</span>
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+        <div className="text-center">
+          {/* Logo and Brand */}
+          <Link
+            href={`/${locale}`}
+            className="inline-flex items-center space-x-2 mb-4 hover:opacity-80 transition-opacity"
+          >
+            <div className="w-6 h-6">
+              <Image
+                src="/logo.svg"
+                alt="ForPublic.id Logo"
+                width={24}
+                height={24}
+                className="w-full h-full"
+              />
             </div>
-            <p className="mt-4 text-sm text-gray-600 max-w-xs">
-              {t('description')}
+            <span className="text-lg font-bold">
+              ForPublic<span className="text-red-600">.id</span>
+            </span>
+          </Link>
+
+          {/* Project Description */}
+          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            {locale === "id"
+              ? "Infrastruktur data terbuka dan API gateway Indonesia untuk akses terpadu ke dataset pemerintah - kesehatan, lingkungan, transparansi, dan statistik."
+              : "Indonesia's open data infrastructure and API gateway for unified access to government datasets - health, environment, transparency, and statistics."}
+          </p>
+
+          {/* Quick Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 text-sm">
+            <Link
+              href={`/${locale}/docs`}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {locale === "id" ? "Dokumentasi" : "Documentation"}
+            </Link>
+            <span className="hidden sm:inline text-gray-600">•</span>
+            <Link
+              href={`/${locale}/status`}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {locale === "id" ? "Status API" : "API Status"}
+            </Link>
+            <span className="hidden sm:inline text-gray-600">•</span>
+            <Link
+              href="https://forpublic.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {locale === "id" ? "Website Utama" : "Main Website"}
+            </Link>
+            <span className="hidden sm:inline text-gray-600">•</span>
+            <Link
+              href="https://github.com/forpublic-id/data"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              GitHub
+            </Link>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-gray-800">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} ForPublic
+              <span className="text-red-600">.id</span>.{" "}
+              {locale === "id"
+                ? "Semua hak dilindungi. Dibuat dengan ❤️ untuk kebaikan publik."
+                : "All rights reserved. Made with ❤️ for public good."}
             </p>
           </div>
-          
-          {/* Ecosystem */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">{t('links.ecosystem')}</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <a href="https://forpublic.id" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('ecosystem.main')}
-                </a>
-              </li>
-              <li>
-                <a href="https://salary.forpublic.id" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('ecosystem.salary')}
-                </a>
-              </li>
-              <li>
-                <a href="https://budget.forpublic.id" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('ecosystem.budget')}
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Resources */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">{t('links.resources')}</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <a href="/docs" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('resources.docs')}
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/forpublic-id/data" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('resources.github')}
-                </a>
-              </li>
-              <li>
-                <a href="/status" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('resources.status')}
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Support */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">{t('links.support')}</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <a href="/contact" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('support.contact')}
-                </a>
-              </li>
-              <li>
-                <a href="/help" className="text-sm text-gray-600 hover:text-gray-900">
-                  {t('support.help')}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="mt-8 border-t pt-8">
-          <p className="text-sm text-gray-600 text-center">
-            Made with ❤️ for Indonesian transparency
-          </p>
         </div>
       </div>
     </footer>

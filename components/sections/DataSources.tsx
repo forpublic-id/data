@@ -7,15 +7,18 @@ export function DataSources() {
             Available Data Sources
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Access data from various Indonesian government ministries and agencies
+            Access data from various Indonesian government ministries and
+            agencies
           </p>
         </div>
-        
+
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Placeholder for data source cards */}
           <div className="data-card">
             <h3 className="font-semibold">Ministry of Health</h3>
-            <p className="text-sm text-muted-foreground">Hospital data, disease surveillance</p>
+            <p className="text-sm text-muted-foreground">
+              Hospital data, disease surveillance
+            </p>
           </div>
         </div>
       </div>

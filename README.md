@@ -22,8 +22,9 @@ Data ForPublic.id adalah **centralized open data infrastructure** dan **API gate
 ## 🏗️ Architecture
 
 ### Core Value Proposition
+
 - **Centralized API Gateway** untuk semua government datasets Indonesia
-- **Unified Access Point** dengan standardized API responses  
+- **Unified Access Point** dengan standardized API responses
 - **Real-time Data Aggregation** dari multiple ministry sources
 - **Developer-friendly** documentation dan SDKs
 - **Data Quality Assurance** dengan automated validation
@@ -31,30 +32,35 @@ Data ForPublic.id adalah **centralized open data infrastructure** dan **API gate
 ### Target Datasets (UNIQUE - tidak duplikasi existing apps)
 
 #### 🏥 Health Data (Kemkes)
+
 - Hospital capacity & availability
 - Disease surveillance data
 - Vaccination coverage statistics
 - Healthcare facility registrations
 
 #### 🌍 Environment Data (KLHK + BMKG)
+
 - Real-time forest fire hotspots
 - Air quality monitoring
 - Weather forecasts & warnings
 - Climate change indicators
 
 #### 🔍 Transparency Data (KPK + LKPP)
+
 - State officials asset declarations (LHKPN)
 - Government procurement transparency
 - Court decisions database
 - Anti-corruption case tracking
 
 #### 📊 Statistics Data (BPS)
+
 - Tourism statistics & visitor arrivals
 - Trade data (export-import)
 - Crime statistics by jurisdiction
 - Social protection indicators
 
 #### 🚨 Emergency Data (BNPB + BMKG)
+
 - Real-time disaster monitoring
 - Earthquake & tsunami alerts
 - Emergency response coordination
@@ -91,17 +97,20 @@ Data ForPublic.id adalah **centralized open data infrastructure** dan **API gate
 ### Installation
 
 1. **Clone repository**:
+
    ```bash
    git clone https://github.com/forpublic-id/data.git
    cd data
    ```
 
 2. **Install dependencies**:
+
    ```bash
    bun install
    ```
 
 3. **Start development server**:
+
    ```bash
    bun run dev
    ```
@@ -127,42 +136,46 @@ curl "https://data.forpublic.id/api/v1/transparency/procurement"
 ## 📊 API Endpoints
 
 ### Health APIs
+
 - `GET /api/v1/health/hospitals` - Hospital directory & capacity
 - `GET /api/v1/health/diseases` - Disease surveillance data
 - `GET /api/v1/health/vaccination` - Vaccination coverage
 
-### Environment APIs  
+### Environment APIs
+
 - `GET /api/v1/environment/air-quality` - Air quality monitoring
 - `GET /api/v1/environment/forest-fires` - Real-time fire hotspots
 - `GET /api/v1/environment/climate` - Climate indicators
 
 ### Emergency APIs
+
 - `GET /api/v1/emergency/disasters` - Disaster monitoring
 - `GET /api/v1/emergency/weather` - Weather warnings
 - `GET /api/v1/emergency/earthquakes` - Earthquake data
 
 ### Transparency APIs
+
 - `GET /api/v1/transparency/assets` - Officials asset declarations
 - `GET /api/v1/transparency/procurement` - Government procurement
 - `GET /api/v1/transparency/court` - Court decisions
 
 ## 🔧 Available Scripts
 
-| Command                | Description                               |
-| ---------------------- | ----------------------------------------- |
-| `bun run dev`          | Start development server (localhost:3000) |
-| `bun run build`        | Build untuk production                    |
-| `bun run start`        | Start production server                   |
-| `bun run lint`         | Run ESLint checks                         |
-| `bun run typecheck`    | TypeScript validation                     |
-| `bun run format`       | Format code menggunakan Prettier         |
+| Command             | Description                               |
+| ------------------- | ----------------------------------------- |
+| `bun run dev`       | Start development server (localhost:3000) |
+| `bun run build`     | Build untuk production                    |
+| `bun run start`     | Start production server                   |
+| `bun run lint`      | Run ESLint checks                         |
+| `bun run typecheck` | TypeScript validation                     |
+| `bun run format`    | Format code menggunakan Prettier          |
 
 ## 🌐 ForPublic.id Ecosystem
 
 Data ForPublic.id melengkapi existing applications:
 
 - **[ForPublic.id](https://forpublic.id)** - Main platform & directory
-- **[Salary](https://salary.forpublic.id)** - PNS & officials salary data  
+- **[Salary](https://salary.forpublic.id)** - PNS & officials salary data
 - **[Budget](https://budget.forpublic.id)** - APBN/APBD transparency
 - **[Planning](https://plan.forpublic.id)** - Spatial planning & RTRW
 - **[Holiday](https://holiday.forpublic.id)** - Indonesian holidays

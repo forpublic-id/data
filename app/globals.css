@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700;800;900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   :root {
@@ -64,51 +60,52 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
 /* Custom styles for data visualization */
 @layer components {
   .data-card {
-    @apply bg-card text-card-foreground rounded-lg border p-6 shadow-sm transition-all hover:shadow-md;
+    @apply bg-white text-gray-900 rounded-lg border p-6 shadow-sm transition-all hover:shadow-md;
   }
-  
+
   .api-endpoint {
-    @apply bg-muted text-muted-foreground font-mono text-sm px-3 py-1 rounded border;
+    @apply bg-gray-100 text-gray-600 font-mono text-sm px-3 py-1 rounded border;
   }
-  
+
   .status-indicator {
     @apply inline-flex items-center gap-2 text-sm font-medium;
   }
-  
+
   .status-online {
     @apply text-green-600;
   }
-  
+
   .status-offline {
     @apply text-red-600;
   }
-  
+
   .status-maintenance {
     @apply text-yellow-600;
   }
-  
+
   .data-source-badge {
     @apply inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-full border;
   }
-  
+
   .realtime-badge {
     @apply bg-green-50 text-green-700 border-green-200;
   }
-  
+
   .cached-badge {
     @apply bg-blue-50 text-blue-700 border-blue-200;
   }
-  
+
   .static-badge {
     @apply bg-gray-50 text-gray-700 border-gray-200;
   }
@@ -119,9 +116,14 @@
   .animate-data-refresh {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
+
   .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }

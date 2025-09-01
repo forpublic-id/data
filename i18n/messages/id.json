@@ -6,7 +6,7 @@
   "hero": {
     "status": "API Gateway Aktif",
     "title": {
-      "line1": "Infrastruktur Data Terbuka", 
+      "line1": "Infrastruktur Data Terbuka",
       "line2": "Indonesia"
     },
     "subtitle": "Platform terpusat untuk mengakses data pemerintah Indonesia melalui API yang terstandarisasi. Satu akses untuk semua dataset transparansi publik.",
@@ -39,7 +39,7 @@
     "categories": {
       "health": "Kesehatan",
       "environment": "Lingkungan",
-      "transparency": "Transparansi", 
+      "transparency": "Transparansi",
       "statistics": "Statistik",
       "emergency": "Darurat",
       "governance": "Pemerintahan",
@@ -55,7 +55,7 @@
       "realtime": "Real-time",
       "hourly": "Per Jam",
       "daily": "Harian",
-      "weekly": "Mingguan", 
+      "weekly": "Mingguan",
       "monthly": "Bulanan",
       "quarterly": "Triwulan",
       "annually": "Tahunan"
@@ -88,7 +88,7 @@
     "ecosystem": {
       "main": "ForPublic.id",
       "salary": "Data Gaji",
-      "budget": "Data Anggaran", 
+      "budget": "Data Anggaran",
       "planning": "Perencanaan",
       "holiday": "Kalender"
     },

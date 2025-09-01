@@ -29,7 +29,7 @@
   "navigation": {
     "home": "Home",
     "apis": "APIs",
-    "docs": "Documentation", 
+    "docs": "Documentation",
     "status": "Status",
     "about": "About"
   },
@@ -40,7 +40,7 @@
       "health": "Health",
       "environment": "Environment",
       "transparency": "Transparency",
-      "statistics": "Statistics", 
+      "statistics": "Statistics",
       "emergency": "Emergency",
       "governance": "Governance",
       "social": "Social",
@@ -48,7 +48,7 @@
     },
     "status": {
       "online": "Online",
-      "offline": "Offline", 
+      "offline": "Offline",
       "maintenance": "Maintenance"
     },
     "updateFrequency": {
@@ -56,7 +56,7 @@
       "hourly": "Hourly",
       "daily": "Daily",
       "weekly": "Weekly",
-      "monthly": "Monthly", 
+      "monthly": "Monthly",
       "quarterly": "Quarterly",
       "annually": "Annually"
     }
@@ -67,7 +67,7 @@
     "endpoints": {
       "health": "Health Data",
       "environment": "Environment Data",
-      "transparency": "Transparency Data", 
+      "transparency": "Transparency Data",
       "statistics": "Statistics Data",
       "emergency": "Emergency Data"
     },
@@ -94,7 +94,7 @@
     },
     "resources": {
       "docs": "Documentation",
-      "github": "GitHub", 
+      "github": "GitHub",
       "status": "API Status",
       "changelog": "Changelog"
     },

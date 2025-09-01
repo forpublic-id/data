@@ -52,15 +52,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Data-specific colors for different data sources
-        data: {
-          health: "#10b981",     // Green for health data
-          environment: "#059669", // Emerald for environment
-          transparency: "#dc2626", // Red for transparency (ForPublic brand)
-          statistics: "#3b82f6",  // Blue for statistics
-          emergency: "#f59e0b",   // Amber for emergency data
-          governance: "#8b5cf6",  // Purple for governance
-        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,25 +67,14 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        // Data loading animations
-        "pulse-data": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.6" },
-        },
-        "shimmer": {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out", 
-        "pulse-data": "pulse-data 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "shimmer": "shimmer 1.5s ease-in-out infinite",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;
 
 export default config;

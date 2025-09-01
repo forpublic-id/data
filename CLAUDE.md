@@ -7,9 +7,10 @@ This file provides guidance to Claude Code when working with Data ForPublic.id, 
 Data ForPublic.id adalah **centralized open data infrastructure** dan **API gateway** untuk ecosystem ForPublic.id. Platform ini menyediakan akses terpadu ke Indonesian government datasets yang belum tercakup di aplikasi lain, dengan fokus pada transparansi dan akuntabilitas publik.
 
 ### Core Mission
+
 - **Centralized API Gateway** untuk semua government datasets Indonesia
 - **Unified Access Point** dengan standardized API responses
-- **Real-time Data Aggregation** dari multiple ministry sources  
+- **Real-time Data Aggregation** dari multiple ministry sources
 - **Developer-friendly** infrastructure untuk researchers, journalists, developers
 - **Data Quality Assurance** dengan automated validation
 
@@ -31,12 +32,14 @@ Data ForPublic.id adalah **centralized open data infrastructure** dan **API gate
 ## Architecture & Tech Stack
 
 ### Core Framework
+
 - **Next.js 15** dengan App Router architecture untuk API routes dan web interface
 - **React 19** untuk modern UI components
 - **TypeScript** untuk comprehensive type safety di API responses
 - **next-intl** untuk internationalization (Indonesian/English)
 
 ### API Infrastructure
+
 - **RESTful API Design** dengan consistent response format
 - **Rate Limiting** per endpoint berdasarkan data source capabilities
 - **Caching Strategy** - smart caching per data type (real-time vs static)
@@ -44,12 +47,14 @@ Data ForPublic.id adalah **centralized open data infrastructure** dan **API gate
 - **Error Handling** dengan proper HTTP status codes dan retry mechanisms
 
 ### Data Sources Integration
+
 - **External API Clients** untuk government ministry APIs
 - **Data Validation** menggunakan Zod schemas
 - **Response Normalization** untuk consistent format across sources
 - **Monitoring & Health Checks** untuk semua external dependencies
 
 ### Styling & UI
+
 - **Tailwind CSS v4** dengan custom data-themed colors
 - **shadcn/ui** component library untuk admin dashboard
 - **Custom API Documentation** interface
@@ -140,6 +145,7 @@ data/
 ## Data Sources & APIs
 
 ### Government Ministry APIs
+
 - **Kemkes**: Hospital data, disease surveillance, vaccination
 - **KLHK**: Forest fires, air quality, environmental monitoring
 - **BMKG**: Weather, climate, earthquake, tsunami warnings
@@ -150,6 +156,7 @@ data/
 - **Kemsos**: Poverty mapping, social assistance data
 
 ### API Features
+
 - **Standardized Response Format**: Consistent structure across all endpoints
 - **Rate Limiting**: Different limits per data source
 - **Authentication**: API key management untuk protected endpoints
@@ -160,27 +167,28 @@ data/
 ## Core Components
 
 ### API Endpoint Handler Pattern
+
 ```typescript
 export async function GET(request: NextRequest) {
   try {
     // Parse query parameters
     const params = parseRequestParams(request);
-    
+
     // Fetch data from government source
     const data = await fetchExternalData(params);
-    
+
     // Standardize response format
     const response: DataResponse<T> = {
       data: data.results,
       metadata: {
-        source: 'kemkes',
-        sourceType: 'government',
+        source: "kemkes",
+        sourceType: "government",
         lastUpdated: data.lastUpdated,
-        reliability: 'high',
+        reliability: "high",
         cached: false,
       },
     };
-    
+
     return NextResponse.json(response, {
       headers: standardAPIHeaders,
     });
@@ -191,21 +199,23 @@ export async function GET(request: NextRequest) {
 ```
 
 ### Data Source Configuration
+
 ```typescript
 const DATA_SOURCE: DataSource = {
-  id: 'kemkes',
-  name: { id: 'Kementerian Kesehatan', en: 'Ministry of Health' },
-  apiUrl: 'https://layanandata.kemkes.go.id/api',
-  reliability: 'high',
-  updateFrequency: 'daily',
-  rateLimits: { requests: 1000, period: '1h' },
-  authentication: { required: true, type: 'api_key' },
+  id: "kemkes",
+  name: { id: "Kementerian Kesehatan", en: "Ministry of Health" },
+  apiUrl: "https://layanandata.kemkes.go.id/api",
+  reliability: "high",
+  updateFrequency: "daily",
+  rateLimits: { requests: 1000, period: "1h" },
+  authentication: { required: true, type: "api_key" },
 };
 ```
 
 ## Development Guidelines
 
 ### API Development
+
 - **Consistent Response Format**: Gunakan `DataResponse<T>` interface untuk semua endpoints
 - **Error Handling**: Proper HTTP status codes dengan informative error messages
 - **Rate Limiting**: Implement rate limiting sesuai dengan source API capabilities
@@ -213,12 +223,14 @@ const DATA_SOURCE: DataSource = {
 - **Testing**: Write integration tests untuk external API interactions
 
 ### Component Development
+
 - **TypeScript**: Comprehensive type safety untuk all data structures
 - **Accessibility**: WCAG 2.1 AA compliance untuk all interactive components
 - **Performance**: Optimize untuk large datasets dan real-time updates
 - **Internationalization**: Complete translations untuk Indonesian dan English
 
 ### Data Management
+
 - **Source Integration**: Follow patterns dari existing data source integrations
 - **Validation**: Use Zod schemas untuk API request/response validation
 - **Caching**: Implement appropriate caching based pada data update frequency
@@ -227,12 +239,14 @@ const DATA_SOURCE: DataSource = {
 ## Ecosystem Integration
 
 ### ForPublic.id Consistency
+
 - **Shared Design System**: Consistent dengan existing ForPublic.id applications
 - **Navigation Patterns**: Similar header/footer structure dengan ecosystem links
 - **Brand Identity**: ForPublic.id ecosystem branding maintained
 - **Cross-Application APIs**: Other ForPublic apps dapat consume dari data.forpublic.id
 
 ### API Gateway Features
+
 - **Unified Authentication**: Single API key untuk access ke multiple data sources
 - **Cross-Origin Support**: CORS configuration untuk ForPublic.id subdomain access
 - **Usage Analytics**: Track API usage across ecosystem applications
@@ -241,12 +255,14 @@ const DATA_SOURCE: DataSource = {
 ## Future Development Priorities
 
 ### Phase 1: Core Infrastructure (Current)
+
 - ✅ Project structure dan basic API endpoints
 - ✅ Data source integration architecture
 - ✅ Basic health dan environment APIs
 - ✅ Documentation platform setup
 
 ### Phase 2: Data Source Expansion
+
 - BPS statistics API integration
 - KPK transparency data integration
 - LKPP procurement API integration
@@ -254,6 +270,7 @@ const DATA_SOURCE: DataSource = {
 - Regional government data sources
 
 ### Phase 3: Advanced Features
+
 - GraphQL endpoint untuk complex queries
 - Real-time WebSocket connections untuk emergency data
 - SDK generation untuk JavaScript, Python, Go
@@ -261,6 +278,7 @@ const DATA_SOURCE: DataSource = {
 - Usage analytics dan developer portal
 
 ### Phase 4: Ecosystem Enhancement
+
 - Cross-application data sharing
 - Unified search across all ForPublic.id datasets
 - Embeddable widgets untuk media usage
@@ -269,12 +287,14 @@ const DATA_SOURCE: DataSource = {
 ## Deployment Configuration
 
 ### Vercel Deployment
+
 - **Domain**: data.forpublic.id
 - **Framework**: Next.js 15 dengan API routes
 - **Runtime**: Node.js 18+ (Bun compatibility)
 - **Regions**: Singapore (sin1) untuk optimal Indonesia performance
 
 ### Environment Variables
+
 ```bash
 # External API Keys
 KEMKES_API_KEY=              # Ministry of Health API
